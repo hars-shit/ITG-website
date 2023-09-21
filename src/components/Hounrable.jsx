@@ -8,6 +8,8 @@ const Container=styled(Box)({
     justifyContent:'center',
     alignItems:'center',
     gap:60,
+    marginTop:5,
+    marginBottom:'5rem',
 })
 const Hounrable = () => {
   return (

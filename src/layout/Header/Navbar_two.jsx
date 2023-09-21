@@ -109,13 +109,13 @@ const Navbar_two = () => {
 
 
                 </Box>
-                <Box display={'flex'}  flexDirection={'column'} marginBottom={'11px'}>
+                <Box display={'flex'}  flexDirection={'column'} >
                     
 
-                    {/* <Typography fontSize={28} fontWeight={700}>प्रौद्योगिकी संस्थान, गोपेश्वर</Typography> */}
-                    <Typography fontSize={25} fontWeight={700}>Institute of Technology, Gopeshwar</Typography>
+                    <Typography fontSize={26} fontWeight={700} lineHeight={1}>प्रौद्योगिकी संस्थान, गोपेश्वर</Typography>
+                    <Typography fontSize={24} fontWeight={700}>Institute of Technology, Gopeshwar</Typography>
                     <Typography fontSize={12} fontWeight={700}>VEER MADHO SINGH BHANDARI UTTARAKHAND TECHNICAL UNIVERSITY CAMPUS INSTITUTE</Typography>
-                    <Typography fontSize={16} fontWeight={400}>Approved By AICTE, NEW DELHI</Typography>
+                    <Typography fontSize={14} fontWeight={400}>Approved By AICTE, NEW DELHI</Typography>
                 </Box>
 
             </Icon>

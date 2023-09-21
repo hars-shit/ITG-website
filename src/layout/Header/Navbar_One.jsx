@@ -6,7 +6,7 @@ import {IoIosCall} from 'react-icons/io'
 
 
 const Header=styled(AppBar)({
-    background:'#0D1282',
+    background:'#0d1057',
     height:'46px',
     display:'flex',
         justifyContent:'center',
@@ -21,8 +21,10 @@ const ToolBar=styled(Toolbar)({
             display:'flex',
         justifyContent:'center',
         textDecoration:'none',
+        gap:10,
         alignItems:'center',
             fontWeight:700,
+            
             color:'white',
             
         }
@@ -31,9 +33,9 @@ const Navbar_One = () => {
   return (
     <Header position='static'>
         <ToolBar>
-        <a href="" className="links"><GoMail />itgopeshwar@gmail.com</a>
+        <a href="" className="links" ><GoMail />itgopeshwar@gmail.com</a>
         <a href="" className="links"><MdOutlineLocationOn />Institute of Technology Gopeshwar, Chamoli, UT-246424</a>
-        <a href="" className="links"><IoIosCall />AICTE Feedback</a>
+        <a href="" className="links"><IoIosCall style={{fontSize:'18'}}/>AICTE Feedback</a>
         <a href="" className="links">24*7 Women Helpline Number - 9389658483 </a>
         </ToolBar>
     </Header>
