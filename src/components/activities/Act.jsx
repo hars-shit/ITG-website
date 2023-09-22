@@ -61,6 +61,9 @@ const Act = () => {
                 <Image src="./assets/act1.png" alt='banner' />
                 <Image src="./assets/act2.png" alt='banner' />
                 <Image src="./assets/act3.png" alt='banner' />
+                <Image src="./assets/img/cricket.jpg" alt='banner' />
+                <Image src="./assets/img/sing.jpg" alt='banner' />
+                <Image src="./assets/img/volly.jpg" alt='banner' />
           
 
     </Banner>

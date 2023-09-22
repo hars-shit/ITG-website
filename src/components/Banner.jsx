@@ -21,6 +21,7 @@ const responsive = {
 const Image = styled('img') ({
     width: '100%',
     height: 530,
+    objectFit:'cover',
     transition: 'transform 0.8s ease-in-out',
     '& : hover':{
         transform: "scale(1.05)",
