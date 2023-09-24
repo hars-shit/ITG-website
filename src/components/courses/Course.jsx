@@ -36,6 +36,12 @@ const CSE = styled(Box)({
     height: '286px',
     width: '440px'
   });
+const ADM = styled(Box)({
+  background: "url('./assets/adm.png')",
+  backgroundRepeat: 'no-repeat',
+  height: '286px',
+  width: '440px'
+});
   const Card=styled(Box)({
     display:'flex', 
     justifyContent:'space-evenly',
@@ -44,10 +50,12 @@ const CSE = styled(Box)({
       backgroundColor: '#1D1B1B',
       width:'440px' ,
        height:"286px",
-       padding:'10px 30px',
        '& > p':{
         color:'white',
         fontWeight:700,
+         padding:'10px 30px',
+
+         // fontSize:'13px     ',
         textAlign:'justify',
        }
   })
@@ -57,6 +65,7 @@ const Course = () => {
   const [mech, setMech] = useState(false);
   const [ece, setEce] = useState(false);
   const [ee, setEe] = useState(false);
+  const [adm, setadm] = useState(false);
 
   const handleCivil = () => {
     setCivil(!civil);
@@ -88,6 +97,13 @@ const Course = () => {
   };
   const handleEe = () => {
     setEe(!ee);
+    // setCse(false)
+    // setEce(false)
+    // setCivil(false)
+    // setMech(false)
+  };
+  const handleade = () => {
+    setadm(!adm);
     // setCse(false)
     // setEce(false)
     // setCivil(false)
@@ -186,7 +202,9 @@ const Course = () => {
         </Box>
       </Box>
        {/* for single row  */}
-       <Box display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'row'} width={'100%'} gap={25} marginLeft={"12rem"}>
+       <Box display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'row'} width={'100%'} gap={10}
+            // marginLeft={"12rem"}
+       >
         <Box height='286px' width= '440px' >
           {/* Image or content in this div */}
           <ReactCardFlip isFlipped={mech} flipDirection="vertical">
@@ -241,10 +259,37 @@ const Course = () => {
             </Card>
           </ReactCardFlip>
         </Box>
-        <Box height='286px' width= '440px' >
-          {/* Image or content in this div */}
-         <img src="./assets/adm.png" alt="" />
-        </Box>
+        {/*<Box height='286px' width= '440px' >*/}
+        {/*  /!* Image or content in this div *!/*/}
+        {/* <img src="./assets/adm.png" alt="" />*/}
+        {/*</Box>*/}
+         <Box height='286px' width= '440px' >
+           {/* Image or content in this div */}
+           <ReactCardFlip isFlipped={ece} flipDirection="vertical">
+             <ADM onClick={handleade} onMouseEnter={handleade}>
+               {/* Front of the card */}
+               <Box sx={{backgroundColor:'rgba(0, 0, 0, 0.5)'}} width={'100%'} height={'100%'} display={'flex'} justifyContent={'center'} alignItems={'center'}>
+                 <Typography fontSize={'32px'} color={'white'} fontWeight={600} textAlign={'center'}></Typography>
+               </Box>
+             </ADM>
+             <Card onClick={handleade}>
+               {/* Back of the card */}
+               <Typography fontSize={'26px'} >GRADUATE PROGRAM</Typography>
+               <Typography fontSize={'14px'}>
+                 Civil Engineering is a Professional Engineering discipline and
+                 it is the Mother branch of Engineering that deals with the
+                 design, construction and maintenance of the physical and
+                 naturally built environment, including works such as bridges,
+                 roads, canals, dams and buildings. It is traditionally broken
+                 into several sub-disciplines including Environmental
+                 Engineering, Geotechnical Engineering, Structural Engineering,
+                 <Typography color="#79bb22">
+                   Read More...
+                 </Typography>
+               </Typography>
+             </Card>
+           </ReactCardFlip>
+         </Box>
         <Box>
         
         </Box>

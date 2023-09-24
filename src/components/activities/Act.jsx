@@ -12,17 +12,19 @@ const responsive = {
     },
     tablet: {
         breakpoint: { max: 1024, min: 464 },
-        items: 1,
+        items: 2,
     },
     mobile: {
         breakpoint: { max: 464, min: 0 },
-        items: 1,
+        items: 2,
     }
 };
 const Image = styled('img') ({
-    width: '475px',
-    height: '290px',
+    width: '80%',
+    height: '230px',
     borderRadius:'5px',
+    objectFit:"cover",
+    objectPosition: '0% 0%',
 });
 const Banner=styled(Carousel)({
   paddingLeft:'5rem',
@@ -36,7 +38,7 @@ const Act = () => {
     <Box marginTop={8} background="black">
 
     <Box marginBottom={2}><Typography textAlign={'center'} fontSize={'32px'} fontWeight={700}  color="#7E1717">Recent Activity</Typography></Box>
-    <Box height={'400px'} sx={{backgroundColor:"#f1f1f1"}} display={'flex'}>
+    <Box height={'360px'}  sx={{backgroundColor:"#f1f1f1"}} display={'flex'}>
 
  
     <Banner  swipeable={false}
@@ -47,6 +49,7 @@ const Act = () => {
     infinite={true}
     autoPlay={true}
     autoPlaySpeed={4000}
+             slidesToSlide={3}
     keyBoardControl={true}
     customTransition="ease .5"
     transitionDuration={500}
@@ -56,7 +59,6 @@ const Act = () => {
     itemClass="carousel-item-padding-40-px"
     
     >
-       
        
                 <Image src="./assets/act1.png" alt='banner' />
                 <Image src="./assets/act2.png" alt='banner' />

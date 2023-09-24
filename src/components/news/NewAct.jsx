@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 const NewAct = () => {
     const Image=styled(Box)({
         background:"url(./assets/bg.png)",
-        backgroundRepeat:'no-repeat',
+        // backgroundRepeat:'no-repeat',
+        backgroundSize:"cover",
         width:'100%',
         height:'100%',
         objectFit:'cover',
@@ -35,7 +36,7 @@ const NewAct = () => {
 
     <Box  display={'flex'} maxWidth={'100%'}>
       {/* for news  */}
-      <Box  display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'}  width={'75%'} gap={5}>
+      <Box  display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'}  width={'70%'} gap={5}>
       <Box fontSize={'32px'} fontWeight={700}  color="#7E1717">ITG-NEWS</Box>
       <Box backgroundColor="#f1f1f1" width={'100%'} height={'385px'} display={'flex'} justifyContent={'space-evenly'} alignItems={'center'} flexDirection={'column'}>
 
@@ -59,7 +60,11 @@ const NewAct = () => {
         }
       </Box>
        {/* for second row  */}
-       <Box display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'row'}>
+       <Box display={'flex'}
+            justifyContent={'center'}
+            alignItems={'center'}
+            flexDirection={'row'}
+            width={'100%'}>
       
       {
           news.map(data=>(
@@ -76,14 +81,14 @@ const NewAct = () => {
           ))
       }
     </Box >
-    <Box  alignSelf="flex-end" marginRight={'20px'}>
+    <Box  alignSelf="flex-end" marginRight={'47px'}>
       <Link to={'/'} >Show all of ITG NEWS</Link>
     </Box>
     </Box>
       </Box>
 
       {/* for events  */}
-      <Box  display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'} width={'25%'}  gap={5}>
+      <Box  display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'} width={'30%'}  gap={5}>
       <Box fontSize={'32px'} fontWeight={700}  color="#7E1717">ITG-EVENTS</Box>
       <Image>
         <Box backgroundColor= "rgba(0, 0, 0, 0.5)" >
@@ -91,7 +96,9 @@ const NewAct = () => {
         <Box ><img src="./assets/Vector.png" alt="" /><Typography color={'white'} fontWeight={600}  fontSize={'20px'}>Coding/Artificial Intelligence</Typography></Box>
         <Box ><img src="./assets/Vector.png" alt="" /><Typography color={'white'} fontWeight={600}  fontSize={'20px'}>Coding/Artificial Intelligence</Typography></Box>
        
-       <Box   width="100%" justifyContent={'flex-end !important'} marginRight={'20px'}>
+       <Box   width="100%"
+              justifyContent={'flex-end !important'}
+              marginRight={'60px !important'}>
         <Link  to={'/'} style={{color:'white'}}>Show all of ITG EVENTS</Link>
         </Box> 
         </Box>
