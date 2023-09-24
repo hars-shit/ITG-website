@@ -35,8 +35,8 @@ const NewAct = () => {
 
     <Box  display={'flex'} maxWidth={'100%'}>
       {/* for news  */}
-      <Box  display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'}  width={'75%'} >
-      <Box>ITG-NEWS</Box>
+      <Box  display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'}  width={'75%'} gap={5}>
+      <Box fontSize={'32px'} fontWeight={700}  color="#7E1717">ITG-NEWS</Box>
       <Box backgroundColor="#f1f1f1" width={'100%'} height={'385px'} display={'flex'} justifyContent={'space-evenly'} alignItems={'center'} flexDirection={'column'}>
 
       {/* for first row  */}
@@ -83,8 +83,8 @@ const NewAct = () => {
       </Box>
 
       {/* for events  */}
-      <Box  display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'} width={'25%'}>
-      <Box>ITG-EVENTS</Box>
+      <Box  display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'} width={'25%'}  gap={5}>
+      <Box fontSize={'32px'} fontWeight={700}  color="#7E1717">ITG-EVENTS</Box>
       <Image>
         <Box backgroundColor= "rgba(0, 0, 0, 0.5)" >
         <Box ><img src="./assets/Vector.png" alt="" /><Typography color={'white'} fontWeight={600} fontSize={'20px'}>Coding/Artificial Intelligence</Typography></Box>
