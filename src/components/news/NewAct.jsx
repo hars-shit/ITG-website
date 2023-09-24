@@ -1,92 +1,105 @@
-import { Box, Typography, styled } from "@mui/material";
+import { Box, Container, Typography, styled } from "@mui/material";
 import React from "react";
+import news from "../../constant/news";
+import { Link } from "react-router-dom";
 
 const NewAct = () => {
-    const BB=styled(Box)({
-        position:'relative',
+    const Image=styled(Box)({
         background:"url(./assets/bg.png)",
-        width:522,
-        height:385,
         backgroundRepeat:'no-repeat',
-        '& > box':{
-            backgroundColor:'gray',
-            
+        width:'100%',
+        height:'100%',
+        objectFit:'cover',
+        '& > div':{
+          display:'flex' ,
+          justifyContent:'center',
+          alignItems:'center',
+          flexDirection:'column',
+          height:'100%',
+          '& > div':{
+            marginTop:30,
+            display:'flex' ,
+            justifyContent:'center',
+            alignItems:'center',
+            flexDirection:'row',
+            gap:10,
+          }
 
         }
+       
     })
   return (
-    <Box height={'445px'}  display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'} position={'relative'}>
-      <Box  display={'flex'} justifyContent={'center'} alignItems={'center' } flexDirection={'column'} position={'absolute'} right="44rem" width="75rem">
-        <Box  display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'} >
-          <Box  display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'} >
-          <Typography  fontSize={'32px'} fontWeight={700}  color="#7E1717" position={'absolute'} bottom={'26rem'}>
-          ITG - NEWS
-        </Typography>
-        <Box backgroundColor="#f1f1f1" width="98rem" height={'24rem'} display={'flex'} justifyContent={'center'}  flexDirection={'column'} gap={6} paddingLeft={10}>
-
-       
-        <Box display={'flex'} justifyContent={'center'} alignItems={'center'}  >
-            <Box  display={'flex'} justifyContent={'center'} alignItems={'center'} gap={3} marginRight={12}>
-                <img src="./assets/globe.png" alt="" />
-                <Box>
-
-                <Typography fontSize={20} fontWeight={600} marginBottom={1}>Coding/Artificial Intelligence</Typography>
-                <Typography width={'22rem'} >Notice regarding 10 days Short term course on “Coding/Artificial Intelligence”</Typography>
-                </Box>
-            </Box>
-            <Box  display={'flex'} justifyContent={'center'} alignItems={'center'} gap={3}>
-                <img src="./assets/globe.png" alt="" />
-                <Box>
-
-                <Typography  fontSize={20} fontWeight={600} marginBottom={1}>Coding/Artificial Intelligence</Typography>
-                <Typography width={'22rem'} >Notice regarding 10 days Short term course on “Coding/Artificial Intelligence”</Typography>
-                </Box>
-            </Box>
-            </Box>
-            <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
-
-            
-            <Box  display={'flex'} justifyContent={'center'} alignItems={'center'} gap={3} marginRight={12}>
-                <img src="./assets/globe.png" alt="" />
-                <Box>
-
-                <Typography  fontSize={20} fontWeight={600} marginBottom={1}>Coding/Artificial Intelligence</Typography>
-                <Typography width={'22rem'} >Notice regarding 10 days Short term course on “Coding/Artificial Intelligence”</Typography>
-                </Box>
-            </Box>
-            <Box  display={'flex'} justifyContent={'center'} alignItems={'center'} gap={3}>
-                <img src="./assets/globe.png" alt="" />
-                <Box>
-
-                <Typography  fontSize={20} fontWeight={600} marginBottom={1}>Coding/Artificial Intelligence</Typography>
-                <Typography width={'22rem'} >Notice regarding 10 days Short term course on “Coding/Artificial Intelligence”</Typography>
-                </Box>
-            </Box>
-
-            </Box>
-            <Typography position={'absolute'} top = "21.9rem" width= "12rem" left="73rem">Show all of ITG NEWS</Typography>
-            </Box>
-          </Box>
-        </Box>
-       
-      </Box>
-      <Box position={'absolute'} bottom={'28.9px'} left={'86.46rem'}>
-            <Typography fontSize={'32px'} fontWeight={700}  color="#7E1717" position={'absolute'} bottom={'26.2rem'} left={'10rem'}>ITG - EVENTS</Typography>
-    <BB>
-        <div style={{width:'100%' ,height:'100%',backgroundColor: "rgba(0, 0, 0, 0.5)"}} >
-            <Box  display={'flex'} justifyContent={'flex-start'} alignItems={'center'} flexDirection={'column'}  height={'100%'} gap='35px'paddingTop={7}>
-                <Box  display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'row'}><img src="./assets/Vector.png" alt="" /><Typography color={'white'} fontWeight={600} marginLeft={2}>Coding/Artificial Intelligence</Typography></Box>
-                <Box display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'row'}><img src="./assets/Vector.png" alt="" /><Typography color={'white'} fontWeight={600} marginLeft={2}>Coding/Artificial Intelligence</Typography></Box>
-                <Box display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'row'}><img src="./assets/Vector.png" alt="" /><Typography color={'white'} fontWeight={600} marginLeft={2}>Coding/Artificial Intelligence</Typography></Box>
-                <Typography color={'white'} alignSelf={'flex-end'} marginTop= "2.6rem" marginRight= "2rem">Show all of ITG EVENTS</Typography>
-            </Box>
-                </div>
-        
-    </BB>
-
    
+    <Container style={{padding:0,overflow:'hidden', height:'445px'}} maxWidth={'100%'} >
+
+
+    <Box  display={'flex'} maxWidth={'100%'}>
+      {/* for news  */}
+      <Box  display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'}  width={'75%'} >
+      <Box>ITG-NEWS</Box>
+      <Box backgroundColor="#f1f1f1" width={'100%'} height={'385px'} display={'flex'} justifyContent={'space-evenly'} alignItems={'center'} flexDirection={'column'}>
+
+      {/* for first row  */}
+
+      <Box display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'row'} >
+      
+        {
+            news.map(data=>(
+              <Box display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'row'}> 
+          <Box marginRight={'20px'}>
+              <img src={data.img} alt="" />
+        </Box>
+        <Box>
+          <Typography fontSize={'24px'} fontWeight={500}>{data.text1}</Typography>
+          <Typography width={'40vh'} >{data.text2}</Typography>
+
+        </Box>
+              </Box>
+            ))
+        }
       </Box>
+       {/* for second row  */}
+       <Box display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'row'}>
+      
+      {
+          news.map(data=>(
+            <>
+        <Box  marginRight={'20px'}>
+            <img src={data.img} alt="" />
+      </Box>
+      <Box >
+        <Typography fontSize={'24px'} fontWeight={500}>{data.text1}</Typography>
+        <Typography width={'40vh'}>{data.text2}</Typography>
+
+      </Box>
+            </>
+          ))
+      }
+    </Box >
+    <Box  alignSelf="flex-end" marginRight={'20px'}>
+      <Link to={'/'} >Show all of ITG NEWS</Link>
     </Box>
+    </Box>
+      </Box>
+
+      {/* for events  */}
+      <Box  display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'} width={'25%'}>
+      <Box>ITG-EVENTS</Box>
+      <Image>
+        <Box backgroundColor= "rgba(0, 0, 0, 0.5)" >
+        <Box ><img src="./assets/Vector.png" alt="" /><Typography color={'white'} fontWeight={600} fontSize={'20px'}>Coding/Artificial Intelligence</Typography></Box>
+        <Box ><img src="./assets/Vector.png" alt="" /><Typography color={'white'} fontWeight={600}  fontSize={'20px'}>Coding/Artificial Intelligence</Typography></Box>
+        <Box ><img src="./assets/Vector.png" alt="" /><Typography color={'white'} fontWeight={600}  fontSize={'20px'}>Coding/Artificial Intelligence</Typography></Box>
+       
+       <Box   width="100%" justifyContent={'flex-end !important'} marginRight={'20px'}>
+        <Link  to={'/'} style={{color:'white'}}>Show all of ITG EVENTS</Link>
+        </Box> 
+        </Box>
+    </Image>
+      </Box>
+      </Box>
+
+    </Container>
   );
 };
 
